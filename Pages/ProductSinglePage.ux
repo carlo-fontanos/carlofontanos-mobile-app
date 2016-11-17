@@ -1,0 +1,29 @@
+<Page ux:Class="ProductSinglePage">
+	<Router ux:Dependency="router" />
+	
+	<JavaScript File="ProductSinglePage.js" />
+	
+	<ScrollView>
+		<StackPanel>	
+			<Image Url="{imageUrl}" />
+
+			<Header Value="{title}" />
+			<Article Value="{excerpt}" />
+			
+			<Panel ux:Class="ProductLink" HitTestMode="LocalBounds" Margin="15,20" Color="#25a">
+				<string ux:Property="Text" />
+				<Text Value="{Property Text}" Color="#fff" Alignment="Center" Margin="30,15" />
+
+				<WhilePressed>
+					<Change this.Color="#138" Duration="0.05" DurationBack=".2" />
+				</WhilePressed>
+			</Panel>
+	
+			<ProductLink Text="VIEW PRODUCT">
+				<Clicked>
+					<LaunchUri Uri="{permalink}" />
+				</Clicked>
+			</ProductLink>
+		</StackPanel>
+	</ScrollView>
+</Page>

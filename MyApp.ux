@@ -1,23 +1,8 @@
 <App>
+	<Router ux:Name="router" />
+	
 	<EdgeNavigator ux:Name="EdgeNavigator">
-		<JavaScript>
-			var Observable = require("FuseJS/Observable");
-
-			var data = Observable();
-
-			fetch('http://carlofontanos.com/api/fuse-carlofontanos.php')
-				.then(function(response) { 
-					return response.json(); 
-				})
-				.then(function(responseObject) {
-					data.value = responseObject; 
-				});
-
-			module.exports = {
-				data: data
-			};
-		</JavaScript>
-
+		
 		<!-- Add a panel to the left edge -->
 		<Sidebar Width="180" ux:Name="menu" EdgeNavigation.Edge="Left">
 			<ActivatingAnimation>
@@ -81,14 +66,11 @@
 			</StackPanel>
 
 			<!-- This is the main scroll area -->
-			<ScrollView>
-				<StackPanel Alignment="Top">
-					<Panel Height="7" />
-					<Each Items="{data.products}">
-						<NewsItem />
-					</Each>
-				</StackPanel>
-			</ScrollView>
+			<Navigator DefaultTemplate="productsPage">
+				<ProductsPage ux:Template="productsPage" router="router" />
+				<ProductSinglePage ux:Template="productSinglePage" router="router" />
+			</Navigator>
+			
 		</DockPanel>
 	</EdgeNavigator>
 </App>
