@@ -29,7 +29,7 @@
 
 				<!-- This is the top ledge -->
 				<Grid Columns="auto,1*,auto"  Background="White">
-					<Panel Margin="7,5,5,5" Height="32" Width="32" HitTestMode="LocalBounds">
+					<Panel Margin="15,10,5,5" Height="32" Width="32" HitTestMode="LocalBounds">
 						<Clicked>
 							<Set EdgeNavigator.Active="menu" />
 						</Clicked>
@@ -44,12 +44,12 @@
 						</Rectangle>
 					</Panel>
 
-					<Text FontSize="22" Alignment="VerticalCenter" TextAlignment="Center"
-						Value="PRODUCTS" Padding="2">
+					<Text FontSize="18" Alignment="VerticalCenter" TextAlignment="Center"
+						Value="PRODUCTS" Margin="0,5,0,0">
 						<Font File="assets/fonts/AlegreyaSans-Bold.otf" />
 					</Text>
 
-					<Panel Margin="5,5,7,5" Height="32" Width="32" HitTestMode="LocalBounds">
+					<Panel Margin="5,5,15,5" Height="32" Width="32" HitTestMode="LocalBounds">
 						<Clicked>
 							<DebugAction Message="Search clicked" />
 						</Clicked>
