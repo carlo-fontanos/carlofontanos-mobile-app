@@ -6,9 +6,9 @@
 	<EdgeNavigator ux:Name="EdgeNavigator">
 		
 		<!-- Add a panel to the left edge -->
-		<Sidebar Width="180" ux:Name="menu" EdgeNavigation.Edge="Left">
+		<Sidebar Width="280" ux:Name="menu" EdgeNavigation.Edge="Left">
 			<ActivatingAnimation>
-				<Change mainAppTranslation.X="180" />
+				<Change mainAppTranslation.X="280" />
 				<!-- Change to cross out -->
 				<Change topMenuTranslation.Y="0" />
 				<Change bottomMenuTranslation.Y="0" />
