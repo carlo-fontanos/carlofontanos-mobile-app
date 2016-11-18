@@ -14,6 +14,7 @@ var app_pages = [
 
 function go_to_page(args){
 	router.push(args.data.ux);
+	EdgeNavigator.dismiss();
 }
 
 module.exports = {
