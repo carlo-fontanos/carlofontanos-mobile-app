@@ -7,11 +7,6 @@
 	<Text ux:Class="Username" TextAlignment="Center" FontSize="18" Color="#fff" Margin="0,8,0,0">
 		<Font File="assets/fonts/AlegreyaSans-Bold.otf" />
 	</Text>
-	<Text ux:Class="Stats" TextAlignment="Center" FontSize="16" Color="#fed166" />
-	<Text ux:Class="Relations" TextAlignment="Center" FontSize="11" Color="#414f5e" />
-	<Text ux:Class="MenuLabel" TextAlignment="Center" FontSize="18" Color="#414f5e" Margin="0,0,0,0">
-		<Font File="assets/fonts/Lato-Bold.ttf" />
-	</Text>
 
 	<StatusBarBackground Background="#909498" />
 
@@ -24,36 +19,13 @@
 	</StackPanel>
 
 	<Grid ux:Name="pages" Alignment="HorizontalCenter" ColumnCount="2" Margin="20,10">
-		<StackPanel Width="70" Clicked="{}">
-			<SidebarIcon File="assets/icon/page-home.png" />
-			<MenuLabel FontSize="10">HOME</MenuLabel>
-		</StackPanel>
-
-		<StackPanel Width="70">
-			<SidebarIcon File="assets/icon/page-about.png" />
-			<MenuLabel FontSize="10">ABOUT</MenuLabel>
-		</StackPanel>
-		
-		<StackPanel Width="70">
-			<SidebarIcon File="assets/icon/page-portfolio.png" />
-			<MenuLabel FontSize="10">PORTFOLIO</MenuLabel>
-		</StackPanel>
-
-		<StackPanel Width="70">
-			<SidebarIcon File="assets/icon/page-products.png" />
-			<MenuLabel FontSize="10">PRODUCTS</MenuLabel>
-		</StackPanel>
-		
-		<StackPanel Width="70">
-			<SidebarIcon File="assets/icon/page-tutorials.png" />
-			<MenuLabel FontSize="10">TUTORIALS</MenuLabel>
-		</StackPanel>
-
-		<StackPanel Width="70">
-			<SidebarIcon File="assets/icon/page-contact.png" />
-			<MenuLabel FontSize="10">CONTACT</MenuLabel>
-		</StackPanel>
+		<Each Items="{app_pages}">
+			<StackPanel Width="70" Clicked="{go_to_page}">
+				<Image File="{icon}" Height="22" Width="22" Margin="0,24,0,9" Color="#7a96b2" />
+				<Text Value="{name}" TextAlignment="Center" FontSize="10" Color="#414f5e" Margin="0,0,0,0">
+					<Font File="assets/fonts/Lato-Bold.ttf" />
+				</Text>
+			</StackPanel>
+		</Each>
 	</Grid>
-
-	<Image ux:Class="SidebarIcon" Height="22" Width="22" Margin="0,24,0,9" Color="#7a96b2" />
 </StackPanel>

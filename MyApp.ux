@@ -1,6 +1,8 @@
 <App>
 	<Router ux:Name="router" />
 	
+	<JavaScript File="MyApp.js" />
+	
 	<EdgeNavigator ux:Name="EdgeNavigator">
 		
 		<!-- Add a panel to the left edge -->
@@ -29,7 +31,7 @@
 
 				<!-- This is the top ledge -->
 				<Grid Columns="auto,1*,auto"  Background="White">
-					<Panel Margin="15,10,5,5" Height="32" Width="32" HitTestMode="LocalBounds">
+					<Panel Padding="15,10,15,10" HitTestMode="LocalBounds">
 						<Clicked>
 							<Set EdgeNavigator.Active="menu" />
 						</Clicked>
@@ -62,13 +64,20 @@
 						</Rectangle>
 					</Panel>
 				</Grid>
-				<Rectangle Height="1" Margin="0,5,0,0" Fill="#333c48" />
+				<Rectangle Height="1" Fill="#333c48" />
 			</StackPanel>
 
 			<!-- This is the main scroll area -->
 			<Navigator DefaultTemplate="productsPage">
+				<HomePage ux:Template="homePage" router="router" />
+				
 				<ProductsPage ux:Template="productsPage" router="router" />
 				<ProductSinglePage ux:Template="productSinglePage" router="router" />
+				
+				<AboutPage ux:Template="aboutPage" router="router" />
+				<PortfolioPage ux:Template="portfolioPage" router="router" />
+				<TutorialsPage ux:Template="tutorialsPage" router="router" />
+				<ContactPage ux:Template="contactPage" router="router" />
 			</Navigator>
 			
 		</DockPanel>

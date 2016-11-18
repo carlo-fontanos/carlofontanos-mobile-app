@@ -1,3 +1,9 @@
 <Page ux:Class="HomePage" Margin="0,14,0,10">
-
+	<Router ux:Dependency="router" />
+	
+	<ScrollView>
+		<StackPanel>
+			<Text Value="Home Page" />
+		</StackPanel>
+	</ScrollView>
 </Page>
