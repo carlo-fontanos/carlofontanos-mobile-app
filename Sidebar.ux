@@ -1,10 +1,7 @@
 <StackPanel ux:Class="Sidebar" Background="#212831">
 	<WhileInactive Threshold="0.4">
-		<Move Target="user" X="-180" Duration="0.2" Delay="0.3" Easing="CircularIn" />
-		<Move Target="stats" X="-180" Duration="0.2" Delay="0.2" Easing="CircularIn" />
-		<Move Target="browser" X="-180" Duration="0.2" Delay="0.15" Easing="CircularIn" />
-		<Move Target="feed" X="-180" Duration="0.2" Delay="0.1" Easing="CircularIn" />
-		<Move Target="chat" X="-180" Duration="0.2" Delay="0.05" Easing="CircularIn" />
+		<Move Target="author" X="-180" Duration="0.2" Delay="0.4" Easing="CircularIn" />
+		<Move Target="pages" X="-180" Duration="0.2" Delay="0.2" Easing="CircularIn" />
 	</WhileInactive>
 
 	<Text ux:Class="Username" TextAlignment="Center" FontSize="18" Color="#fff" Margin="0,8,0,0">
@@ -18,7 +15,7 @@
 
 	<StatusBarBackground Background="#909498" />
 
-	<StackPanel ux:Name="user">
+	<StackPanel ux:Name="author">
 		<Panel Height="90" />
 		<Circle Width="85" Height="85">
 			<ImageFill Url="http://carlofontanos.com/wp-content/themes/carlo-fontanos/img/carlofontanos.jpg" />
@@ -26,34 +23,37 @@
 		<Username>Carlo Fontanos</Username>
 	</StackPanel>
 
-	<Grid ux:Name="stats" Alignment="HorizontalCenter" ColumnCount="3" Margin="0,10,0,15">
-		<StackPanel Width="70">
-			<Stats>2,342</Stats>
-			<Relations>Followers</Relations>
+	<Grid ux:Name="pages" Alignment="HorizontalCenter" ColumnCount="2" Margin="20,10">
+		<StackPanel Width="70" Clicked="{}">
+			<SidebarIcon File="assets/icon/page-home.png" />
+			<MenuLabel FontSize="10">HOME</MenuLabel>
 		</StackPanel>
-		<Rectangle Height="40" Width="1">
-			<SolidColor Color="#414f5e" />
-		</Rectangle>
+
 		<StackPanel Width="70">
-			<Stats>3,735</Stats>
-			<Relations>Following</Relations>
+			<SidebarIcon File="assets/icon/page-about.png" />
+			<MenuLabel FontSize="10">ABOUT</MenuLabel>
+		</StackPanel>
+		
+		<StackPanel Width="70">
+			<SidebarIcon File="assets/icon/page-portfolio.png" />
+			<MenuLabel FontSize="10">PORTFOLIO</MenuLabel>
+		</StackPanel>
+
+		<StackPanel Width="70">
+			<SidebarIcon File="assets/icon/page-products.png" />
+			<MenuLabel FontSize="10">PRODUCTS</MenuLabel>
+		</StackPanel>
+		
+		<StackPanel Width="70">
+			<SidebarIcon File="assets/icon/page-tutorials.png" />
+			<MenuLabel FontSize="10">TUTORIALS</MenuLabel>
+		</StackPanel>
+
+		<StackPanel Width="70">
+			<SidebarIcon File="assets/icon/page-contact.png" />
+			<MenuLabel FontSize="10">CONTACT</MenuLabel>
 		</StackPanel>
 	</Grid>
 
 	<Image ux:Class="SidebarIcon" Height="22" Width="22" Margin="0,24,0,9" Color="#7a96b2" />
-
-	<StackPanel>
-		<StackPanel ux:Name="browser">
-			<SidebarIcon File="assets/icon/Browser.png" />
-			<MenuLabel>NEWS</MenuLabel>
-		</StackPanel>
-		<StackPanel ux:Name="feed">
-			<SidebarIcon File="assets/icon/Feed.png" />
-			<MenuLabel>FEED</MenuLabel>
-		</StackPanel>
-		<StackPanel ux:Name="chat">
-			<SidebarIcon File="assets/icon/Chat.png" />
-			<MenuLabel>CHAT</MenuLabel>
-		</StackPanel>
-	</StackPanel>
 </StackPanel>
