@@ -11,18 +11,18 @@
 	<StatusBarBackground Background="#909498" />
 
 	<StackPanel ux:Name="author">
-		<Panel Height="90" />
+		<Panel Height="50" />
 		<Circle Width="85" Height="85">
 			<ImageFill Url="http://carlofontanos.com/wp-content/themes/carlo-fontanos/img/carlofontanos.jpg" />
 		</Circle>
 		<Username>Carlo Fontanos</Username>
 	</StackPanel>
 
-	<Grid ux:Name="pages" Alignment="HorizontalCenter" ColumnCount="2" Margin="20,10">
+	<Grid ux:Name="pages" Alignment="HorizontalCenter" ColumnCount="1" Margin="20,10">
 		<Each Items="{app_pages}">
-			<StackPanel Width="70" Clicked="{go_to_page}">
-				<Image File="{icon}" Height="22" Width="22" Margin="0,24,0,9" Color="#7a96b2" />
-				<Text Value="{name}" TextAlignment="Center" FontSize="10" Color="#414f5e" Margin="0,0,0,0">
+			<StackPanel Clicked="{go_to_page}">
+				<Image File="{icon}" Height="32" Width="32" Margin="0,10,0,10" Color="#7a96b2" />
+				<Text Value="{name}" Width="150" TextAlignment="Center" FontSize="15" Color="#414f5e" Margin="0,0,0,0">
 					<Font File="assets/fonts/Lato-Bold.ttf" />
 				</Text>
 			</StackPanel>
