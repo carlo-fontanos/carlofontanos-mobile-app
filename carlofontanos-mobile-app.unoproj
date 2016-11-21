@@ -6,6 +6,7 @@
 	"Fuse.Launcher"
   ],
   "Includes": [
-    "*"
+    "*",
+	"*.png:Bundle"
   ]
 }
