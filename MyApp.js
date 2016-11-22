@@ -1,5 +1,6 @@
 /**
  * Global Variables and Functions.
+ * Everything here will be available in the entire app.
  */
  
 var icons_path = 'assets/icon/';
