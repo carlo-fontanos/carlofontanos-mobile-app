@@ -1,9 +1,35 @@
-<Page ux:Class="AboutPage" Margin="0,14,0,10">
+<FancyTransitionPage ux:Class="AboutPage">
+	<EnteringAnimation>
+        <Move X="1" RelativeTo="Size" Duration="0.4" Easing="BackOut" />
+    </EnteringAnimation>
+    <ExitingAnimation>
+        <Move Y="1" RelativeTo="Size" Duration="0.4" Easing="CubicIn" />
+    </ExitingAnimation>
+	
 	<Router ux:Dependency="router" />
 	
-	<ScrollView>
-		<StackPanel>
-			<Text Value="About Me Page" />
-		</StackPanel>
-	</ScrollView>
-</Page>
+	<JavaScript>
+            module.exports = {
+                onPageLoaded : function(res) {
+                    console.log("WebView arrived at "+ JSON.parse(res.json).url);
+            }
+        };
+    </JavaScript>
+    <DockPanel>
+        <StatusBarBackground Dock="Top"/>
+        <NativeViewHost>
+            <WebView Dock="Fill" Url="http://carlofontanos.com/about-me/">
+                <PageLoaded>
+                    <EvaluateJS Handler="{onPageLoaded}">
+                        var result = {
+                            url : document.location.href
+                        };
+                        return result;
+                    </EvaluateJS>
+                </PageLoaded>
+            </WebView>
+        </NativeViewHost>
+
+        <BottomBarBackground Dock="Bottom" />
+    </DockPanel>
+</FancyTransitionPage>
